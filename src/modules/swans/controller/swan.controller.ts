@@ -11,6 +11,7 @@ export class SwanController {
   constructor(private readonly swanService: SwanService) {}
 
   @Get('/health-check')
+  @UseGuards(SwanGuard)
   checkAPI(): API {
     return {
       message: 'Hello from Swan Service!',
