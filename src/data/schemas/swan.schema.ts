@@ -72,6 +72,7 @@ export class Swan {
   @Prop({ default: false })
   isBanned?: boolean;
 
+  @Prop()
   isAdmin?: boolean;
 
   fbAccessToken?: string;
@@ -86,6 +87,9 @@ export class Swan {
   status?: AccountRequestStatusEnum;
 
   authorization?: string;
+
+  @Prop()
+  balance?: number;
 }
 
 export type SwanDocument = Swan & Document;

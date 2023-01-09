@@ -13,7 +13,12 @@ export class SwanRepository {
   constructor(@InjectModel(Swan.name) private swanModel: Model<SwanDocument>) {}
 
   async createSwan(input: CreateSwanInput): Promise<SwanOutput> {
-    return this.swanModel.create({ ...input, value: SWAN_INITIAL_BALANCE, defaultPhotoURL: DEFAULT_PROFILE_PICTURE });
+    return this.swanModel.create({
+      ...input,
+      value: SWAN_INITIAL_BALANCE,
+      defaultPhotoURL: DEFAULT_PROFILE_PICTURE,
+      balance: SWAN_INITIAL_BALANCE,
+    });
   }
 
   async updateSwan(id: string, input: UpdateSwanInput): Promise<void> {
