@@ -4,7 +4,7 @@ import { CreateSwanInput } from '../dto/input/create-swan.input';
 import { UpdateSwanInput } from '../dto/input/update-swan.input';
 import { API } from '../dto/output/api.output.dto';
 import { SwanOutput } from '../dto/output/swan.output';
-import { SwanService as SwanService } from '../service/swan.service';
+import { SwanService } from '../service/swan.service';
 
 @Controller('swan')
 export class SwanController {

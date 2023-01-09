@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken } from '@nestjs/mongoose';
-import { SwanService as SwanService } from './swan.service';
+import { SwanService } from './swan.service';
 import { Swan } from '@schemas/swan.schema';
 
 const mockModel = {};
