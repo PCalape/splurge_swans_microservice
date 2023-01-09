@@ -1,3 +1,4 @@
+import { DEFAULT_PROFILE_PICTURE, SWAN_INITIAL_BALANCE } from '@modules/common/environment';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Swan, SwanDocument } from '@schemas/swan.schema';
@@ -12,7 +13,7 @@ export class SwanRepository {
   constructor(@InjectModel(Swan.name) private swanModel: Model<SwanDocument>) {}
 
   async createSwan(input: CreateSwanInput): Promise<SwanOutput> {
-    return this.swanModel.create(input);
+    return this.swanModel.create({ ...input, value: SWAN_INITIAL_BALANCE, defaultPhotoURL: DEFAULT_PROFILE_PICTURE });
   }
 
   async updateSwan(id: string, input: UpdateSwanInput): Promise<void> {
