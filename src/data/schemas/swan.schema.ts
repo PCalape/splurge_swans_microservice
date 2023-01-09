@@ -3,14 +3,10 @@ import mongoose, { Document } from 'mongoose';
 import { NameDisplayPreferenceEnum } from '@enums/name-display-preference.enum';
 import { GenderEnum } from '@enums/gender.enum';
 import { AccountRequestStatusEnum } from '@enums/account-request-status.enum';
-import { UUID } from 'bson';
 mongoose.set('debug', process.env.DB_LOGGING_FLAG === 'enabled');
 
 @Schema({ timestamps: true })
 export class Swan {
-  @Prop({ default: new UUID() })
-  id?: string;
-
   @Prop({ default: new Date() })
   createdAt?: Date;
 
