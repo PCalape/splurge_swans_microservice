@@ -1,10 +1,9 @@
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Observable } from 'rxjs';
-
-const TOKEN = 'swanling_microservice';
+import { TOKEN } from '../environment';
 
 @Injectable()
-export class SwanlingGuard implements CanActivate {
+export class SwanGuard implements CanActivate {
   canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {
     const request = context.switchToHttp().getRequest();
     return validateRequest(request);

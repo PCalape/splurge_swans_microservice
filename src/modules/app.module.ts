@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CommonModule } from '@modules/common/common.module';
-import { SwanlingModule } from './swanlings/swanling.module';
+import { SwanModule } from './swans/swan.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -14,7 +14,7 @@ import { SwanlingModule } from './swanlings/swanling.module';
       inject: [ConfigService],
     }),
     CommonModule,
-    SwanlingModule,
+    SwanModule,
   ],
 })
 export class AppModule {}
